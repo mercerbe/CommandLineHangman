@@ -1,4 +1,4 @@
-const Letter = require('./Letter.js');
+const Letter = require('./Letter');
 
 function Word(word){
   this.letters = word.split("").map(function(char) {
@@ -6,7 +6,7 @@ function Word(word){
   })
 }
 
-Word.protoype.getSolution = function() {
+Word.prototype.getSolution = function() {
   return this.letters.map(function(letter){
     return letter.getSolution();
   }).join('');
@@ -23,7 +23,7 @@ Word.prototype.guessLetter = function(char) {
       correctLetter = true;
     }
   });
-  console.log('\n' + this = '\n');
+  console.log('\n' + this + '\n');
   return correctLetter;
 };
 

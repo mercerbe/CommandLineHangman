@@ -12,14 +12,14 @@ function Game() {
   };
 
   this.nextWord = function() {
-    var randomWord = words[Math.floor(Math.random()*words.length)];
+    var randomWord = HPwords[Math.floor(Math.random()*HPwords.length)];
     this.currentWord = new Word(randomWord);
-    console.log('\n' + this.currentWord = '\n');
+    console.log('\n' + this.currentWord + '\n');
     this.makeGuess();
   }
 
   this.makeGuess = function() {
-    this.getLetter().then(function(){
+    this.promptForLetter().then(function(){
       if(self.guessesLeft = 0) {
         console.log("Out of guesses! The word was: " + self.currentWord.getSolution() + '\n');
         self.playAgain();
@@ -53,7 +53,7 @@ function Game() {
       {
       type: 'input',
       name: 'input',
-      message: 'Guess a letter:'
+      message: 'Guess a letter:',
       validate: function(val){
         return /[a-z1-9]/gi.test(val);
         }
