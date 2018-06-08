@@ -51,5 +51,5 @@
    "Sorting Hat",
    "Stupefy",
    "Transfiguration",
-   "Voldemort",
+   "Voldemort"
  ];

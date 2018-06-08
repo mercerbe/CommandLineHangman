@@ -1,14 +1,14 @@
 function Letter(char) {
+  this.show = !/[a-z1-9]/ig.test(char);
   this.char = char;
-  this.show = false;
 }
 
 Letter.prototype.toString = function() {
-  if(this.show === false){
-  return "_";
-} else {
+  if(this.show === true){
   return this.char;
-}
+} else {
+  return "_";
+};
 
 }
 
@@ -16,13 +16,13 @@ Letter.prototype.getSolution = function() {
   return this.char;
 }
 
-Letter.prototype.guess = function(charGuess) {
-  if(charGuess.toUpperCase() === this.char.toUpperCase()) {
+Letter.prototype.guess = function(val) {
+  if(val.toUpperCase() === this.char.toUpperCase()) {
     this.show = true;
     return true;
-  } else {
-    return false;
   }
-}
+    return false;
+
+};
 
 module.exports = Letter;
